@@ -95,7 +95,7 @@ print("\n你选择了" + target + "客户端")
 print("\n====================================================\n支持订阅或ss/ssr/trojan/vmess链接，多个链接请使用  |  分隔")
 
 url = input("\n请输入你要转换的链接地址：")
-ask = input("\n是否添加新的链接地址（输y 添加，否则默认不添加）:").lower()
+ask = input("\n是否添加新的链接地址（输 y 添加，否则默认不添加）:").lower()
 if ask != "y":
     pass
 else:
@@ -129,7 +129,7 @@ if choose == "2":
     choose_backend(choose_end)
 
     print(
-        "\n====================================================\n\n常用规则配置：\n1. ACL4SSR_Online 默认版 分组比较全 (与Github同步)\n2. ACL4SSR_Online_Mini 精简版 (与Github同步)\n3. ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)\n4. No-Urltest \n5. Urltest\n6. Basic(仅GEOIP CN + Final)\n7. ConnersHua 神机规则 Outbound\n8 .lhie1 洞主规则完整版 \n9. 自定义")
+        "\n====================================================\n\n常用规则配置：\n1. ACL4SSR_Online 默认版 分组比较全 (与Github同步)\n2. ACL4SSR_Online_Mini 精简版 (与Github同步)\n3. ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)\n4. No-Urltest \n5. Urltest\n6. Basic(仅GEOIP CN + Final)\n7. ConnersHua 神机规则 Outbound\n8. lhie1 洞主规则完整版 \n9. 自定义")
     choose_con = input("---------------------------------------------\n\n请输入你要选择的配置规则，回车默认使用配置1：")
     choose_config(choose_con)
 
@@ -176,7 +176,7 @@ if choose == "3":
     choose_backend(choose_end)
 
     print(
-        "\n====================================================\n\n常用规则配置：\n1. ACL4SSR_Online 默认版 分组比较全 (与Github同步)\n2. ACL4SSR_Online_Mini 精简版 (与Github同步)\n3. ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)\n4. No-Urltest \n5. Urltest\n6. Basic(仅GEOIP CN + Final)\n7. ConnersHua 神机规则 Outbound\n8 .lhie1 洞主规则完整版 \n9. 自定义")
+        "\n====================================================\n\n常用规则配置：\n1. ACL4SSR_Online 默认版 分组比较全 (与Github同步)\n2. ACL4SSR_Online_Mini 精简版 (与Github同步)\n3. ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)\n4. No-Urltest \n5. Urltest\n6. Basic(仅GEOIP CN + Final)\n7. ConnersHua 神机规则 Outbound\n8. lhie1 洞主规则完整版 \n9. 自定义")
     choose_con = input("---------------------------------------------\n\n请输入你要选择的配置规则，回车默认使用配置1：")
     choose_config(choose_con)
 
@@ -245,7 +245,7 @@ if choose == "4":
     choose_backend(choose_end)
 
     print(
-        "\n====================================================\n\n常用规则配置：\n1. ACL4SSR_Online 默认版 分组比较全 (与Github同步)\n2. ACL4SSR_Online_Mini 精简版 (与Github同步)\n3. ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)\n4. No-Urltest \n5. Urltest\n6. Basic(仅GEOIP CN + Final)\n7. ConnersHua 神机规则 Outbound\n8 .lhie1 洞主规则完整版 \n9. 自定义")
+        "\n====================================================\n\n常用规则配置：\n1. ACL4SSR_Online 默认版 分组比较全 (与Github同步)\n2. ACL4SSR_Online_Mini 精简版 (与Github同步)\n3. ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)\n4. No-Urltest \n5. Urltest\n6. Basic(仅GEOIP CN + Final)\n7. ConnersHua 神机规则 Outbound\n8. lhie1 洞主规则完整版 \n9. 自定义")
     choose_con = input("---------------------------------------------\n\n请输入你要选择的配置规则，回车默认使用配置1：")
     choose_config(choose_con)
 
