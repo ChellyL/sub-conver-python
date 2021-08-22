@@ -54,6 +54,7 @@ def choose_config(choose_con):
     if choose_con == "9":
         config = input("请输入自定义的规则地址：")
     print("\n此次转换使用配置为：" + config)
+    config = urllib.parse.quote(config)
 
 
 
@@ -94,20 +95,9 @@ if client == 14:
 print("\n你选择了" + target + "客户端")
 print("\n====================================================\n支持订阅或ss/ssr/trojan/vmess链接，多个链接请使用  |  分隔")
 
-url = input("\n请输入你要转换的链接地址：")
-ask = input("\n是否添加新的链接地址（输 y 添加，否则默认不添加）:").lower()
-if ask != "y":
-    pass
-else:
-    link = input("请输入单条或多条（用 | 分隔）添加的链接地址，输入 q 或回车停止添加：")
-    while True:
-        url += "|" + link
-        link = input("是否继续输入链接，输入 q 或回车退出添加:")
-        if link == "":
-            break
-        elif link == "q":
-            break
-print("\n输入完毕，本次转换的链接为：" + url)
+url = input("\n请输入你要转换的链接地址如果有多条链接，请用 | 分隔：")
+print("\n本次转换的链接为：" + url)
+url = urllib.parse.quote(url)
 
 print(
     "\n====================================================\n\n请选择想要使用的转换模式：\n---------------------------------------------\n\n基础模式:\n  1. 默认后端、不启用emoji、无额外配置规则 \n\n进阶模式:（可选后端、启用emoji、选择配置规则、选择节点等）\n  2. 默认进阶（+emoji、后端、配置） \n  3. 更多进阶模式（+节点选择/排除、自定义文件名） \n  4. 完全自定义（自定义全部选项）")
@@ -154,15 +144,22 @@ if choose == "2":
     else:
         sort = "true"
         print("使用节点排序")
+    filename_use = input("\n====================================================\n请输入自定义订阅文件名，回车则略过：\n")
+    if filename_use == "n":
+        print("不使用自定义订阅文件名")
+    else:
+        filename = filename_use
+        filename = urllib.parse.quote(filename)
+        print("使用自定义订阅文件名：" + filename)
+
     tfo = "false"
     scv = "false"
     fdn = "false"
     result = backend + 'target=' + target + "&url=" + url + "&config=" + config + "&emoji=" + emoji + \
-             "&tfo=" + tfo + "&scv=" + scv + "&fdn=" + fdn + "&sort=" + sort + "&new_name=" + new_name
-    encode = urllib.parse.quote(result)
-    print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
-    print(encode)
+             "&tfo=" + tfo + "&filename=" + filename + "&scv=" + scv + "&fdn=" + fdn + "&sort=" + sort + "&new_name=" + new_name
 
+    print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
+    print(result)
 if choose == "3":
     print("\n*使用进阶模式2*")
     print(
@@ -212,25 +209,27 @@ if choose == "3":
     else:
         include = include_use
         print("启用以下节点：" + include)
+        include = urllib.parse.quote(include)
         result += "&include=" + include
     exclude_use = input("\n====================================================\n排除含有以下关键字的节点，回车则略过\n（多个关键字以 | 隔开，支持正则表达式）：")
     if exclude_use == "":
         print("\n不排除节点")
     else:
         exclude = exclude_use
+        exclude = urllib.parse.quote(exclude)
         result += "&exclude=" + exclude
         print("排除以下节点：" + exclude)
-    filename = ""  # 自定义文件名
-    filename_use = input("\n====================================================\n其否使用自定义订阅文件名，回车则略过（y/n）：\n")
-    if filename_use == "y":
+    filename_use = input("\n====================================================\n请输入自定义订阅文件名，回车则略过：\n")
+    if filename_use == "n":
+        print("不使用自定义订阅文件名")
+    else:
         filename = filename_use
         result += "&filename=" + filename
+        filename = urllib.parse.quote(filename)
         print("使用自定义订阅文件名：" + filename)
-    else:
-        print("不使用自定义订阅文件名")
-    encode = urllib.parse.quote(result)
+
     print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
-    print(encode)
+    print(result)
 
 if choose == "4":
     print("\n*使用进阶模式3·全部选项自定义*")
@@ -279,6 +278,7 @@ if choose == "4":
         print("\n不挑选节点")
     else:
         include = include_use
+        include = urllib.parse.quote(include)
         print("启用以下节点：" + include)
         result += "&include=" + include
     exclude_use = input("\n====================================================\n排除含有以下关键字的节点，回车则略过\n（多个关键字以 | 隔开，支持正则表达式）：")
@@ -286,16 +286,17 @@ if choose == "4":
         print("\n不排除节点")
     else:
         exclude = exclude_use
+        exclude = urllib.parse.quote(exclude)
         result += "&exclude=" + exclude
         print("排除以下节点：" + exclude)
-    filename = ""  # 自定义文件名
-    filename_use = input("\n====================================================\n其否使用自定义订阅文件名，回车则略过（y/n）：\n")
-    if filename_use == "y":
+    filename_use = input("\n====================================================\n请输入自定义订阅文件名，回车则略过：\n")
+    if filename_use == "n":
+        print("不使用自定义订阅文件名")
+    else:
         filename = filename_use
         result += "&filename=" + filename
+        filename = urllib.parse.quote(filename)
         print("使用自定义订阅文件名：" + filename)
-    else:
-        print("不使用自定义订阅文件名")
     node_list_use = input("\n====================================================\n是否输出为Node Lise（回车默认不启用）（y/n）：\n")
     if node_list_use == "y":
         node_list = "true"
@@ -346,8 +347,7 @@ if choose == "4":
     else:
         print("不启用网易云")
 
-    encode = urllib.parse.quote(result)
     print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
-    print(encode)
+    print(result)
 
 input("\n\n复制完链接后，请按任意键退出：")
