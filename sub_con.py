@@ -36,7 +36,7 @@ def choose_config(choose_con):
     if choose_con == "":
         choose_con = "1"
     if choose_con == "1":
-        config = "https://raw.githubusercontent.com/ChellyL/CR/main/Full.ini"
+        config = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online.ini"
     if choose_con == "2":
         config = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Mini.ini"
     if choose_con == "3":
@@ -65,7 +65,7 @@ def high_mod():
     choose_backend(choose_end)
 
     print(
-        "\n====================================================\n\n常用规则配置：\n1. 自建Full\n2. ACL4SSR_Online_Mini 精简版 (与Github同步)\n3. ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)\n4. No-Urltest \n5. Urltest\n6. Basic(仅GEOIP CN + Final)\n7. ConnersHua 神机规则 Outbound\n8. lhie1 洞主规则完整版 \n9. 自定义")
+        "\n====================================================\n\n常用规则配置：\n1. ACL4SSR_Online 默认版 分组比较全 (与Github同步)\n2. ACL4SSR_Online_Mini 精简版 (与Github同步)\n3. ACL4SSR_Online_Full 全分组 重度用户使用 (与Github同步)\n4. No-Urltest \n5. Urltest\n6. Basic(仅GEOIP CN + Final)\n7. ConnersHua 神机规则 Outbound\n8. lhie1 洞主规则完整版 \n9. 自定义")
     choose_con = input("---------------------------------------------\n\n请输入你要选择的配置规则，回车默认使用配置1：")
     choose_config(choose_con)
 
