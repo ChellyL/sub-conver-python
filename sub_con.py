@@ -120,13 +120,13 @@ def high_mod2():
         result += "&exclude=" + exclude
         print("排除以下节点：" + exclude)
     filename_use = input("\n====================================================\n请输入自定义订阅文件名，回车则略过：\n")
-    if filename_use == "y":
+    if len(filename_use) == 0:
+        print("不使用自定义订阅文件名")
+    else:
         filename = filename_use
         result += "&filename=" + filename
         filename = urllib.parse.quote(filename)
         print("使用自定义订阅文件名：" + filename)
-    else:
-        print("不使用自定义订阅文件名")
 
 print(
     "###################################################\n\n      Subscription Converter Python离线版\n\n###################################################")
@@ -137,9 +137,9 @@ client = int(input("---------------------------------------------\n请输入你�
 if client == 1:
     target = "clash"
 if client == 2:
-    target = "surge&ver3"
+    target = "surge&ver=3"
 if client == 3:
-    target = "surge&ver4"
+    target = "surge&ver=4"
 if client == 4:
     target = "quan"
 if client == 5:
@@ -161,7 +161,7 @@ if client == 12:
 if client == 13:
     target = "clashr"
 if client == 14:
-    target = "surge&ver2"
+    target = "surge&ver=2"
 print("\n你选择了" + target + "客户端")
 print("\n====================================================\n支持订阅或ss/ssr/trojan/vmess链接，多个链接请使用  |  分隔")
 
