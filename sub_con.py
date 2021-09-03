@@ -137,35 +137,34 @@ client = input("---------------------------------------------\n请输入你所�
 while len(client) == 0 or 0 > int(client) or int(client) > 15:
     client = input("请输入正确数字:")
     if len(client) != 0 and 0 < int(client) < 15:
-        client = int(client)
-        if client == 1:
+        if client == "1":
             target = "clash"
-        if client == 2:
-            target = "surge&ver=3"
-        if client == 3:
-            target = "surge&ver=4"
-        if client == 4:
+        if client == "2":
+            target = "surge&ver3"
+        if client == "3":
+            target = "surge&ver4"
+        if client == "4":
             target = "quan"
-        if client == 5:
+        if client == "5":
             target = "quanx"
-        if client == 6:
+        if client == "6":
             target = "surboard"
-        if client == 7:
+        if client == "7":
             target = "loon"
-        if client == 8:
+        if client == "8":
             target = "sssub"
-        if client == 9:
+        if client == "9":
             target = "v2ray"
-        if client == 10:
+        if client == "10":
             target = "ss"
-        if client == 11:
+        if client == "11":
             target = "ssr"
-        if client == 12:
+        if client == "12":
             target = "ssd"
-        if client == 13:
+        if client == "13":
             target = "clashr"
-        if client == 14:
-            target = "surge&ver=2"
+        if client == "14":
+            target = "surge&ver2"
         print("\n你选择了" + target + "客户端")
 print("\n====================================================\n支持订阅或ss/ssr/trojan/vmess链接，多个链接请使用  |  分隔")
 
