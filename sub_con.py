@@ -178,7 +178,7 @@ print(
 choose = input("\n---------------------------------------------\n请选择想要的转换模式:")
 while len(choose) == 0 or int(choose) > 5 or int(choose) < 0:
     choose = input("请输入正确的数字（1-4）：")
-    if len(choose) != 0 or 0 < int(choose) < 5:
+    if len(choose) != 0 and 0 < int(choose) < 5:
         if choose == "1":
             print("\n====================================================\n\n*使用基础模式*")
             backend = "https://api.wcc.best/sub?"
