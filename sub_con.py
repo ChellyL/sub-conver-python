@@ -133,36 +133,40 @@ print(
 
 print(
     "支持的客户端：\n1.clash\n2.surge3\n3.surge4\n4.quantumult\n5.quantumultX\n6.surfboard\n7.loon\n8.ssandriod\n9.v2ray\n10.ss\n11.ssr\n12.ssd\n13.clashr\n14.suger2")
-client = int(input("---------------------------------------------\n请输入你所使用的客户端:"))
-if client == 1:
-    target = "clash"
-if client == 2:
-    target = "surge&ver=3"
-if client == 3:
-    target = "surge&ver=4"
-if client == 4:
-    target = "quan"
-if client == 5:
-    target = "quanx"
-if client == 6:
-    target = "surboard"
-if client == 7:
-    target = "loon"
-if client == 8:
-    target = "sssub"
-if client == 9:
-    target = "v2ray"
-if client == 10:
-    target = "ss"
-if client == 11:
-    target = "ssr"
-if client == 12:
-    target = "ssd"
-if client == 13:
-    target = "clashr"
-if client == 14:
-    target = "surge&ver=2"
-print("\n你选择了" + target + "客户端")
+client = input("---------------------------------------------\n请输入你所使用的客户端:")
+while len(client) == 0 or 0 > int(client) or int(client) > 15:
+    client = input("请输入正确数字:")
+    if len(client) != 0 and 0 < int(client) < 15:
+        client = int(client)
+        if client == 1:
+            target = "clash"
+        if client == 2:
+            target = "surge&ver=3"
+        if client == 3:
+            target = "surge&ver=4"
+        if client == 4:
+            target = "quan"
+        if client == 5:
+            target = "quanx"
+        if client == 6:
+            target = "surboard"
+        if client == 7:
+            target = "loon"
+        if client == 8:
+            target = "sssub"
+        if client == 9:
+            target = "v2ray"
+        if client == 10:
+            target = "ss"
+        if client == 11:
+            target = "ssr"
+        if client == 12:
+            target = "ssd"
+        if client == 13:
+            target = "clashr"
+        if client == 14:
+            target = "surge&ver=2"
+        print("\n你选择了" + target + "客户端")
 print("\n====================================================\n支持订阅或ss/ssr/trojan/vmess链接，多个链接请使用  |  分隔")
 
 url = input("\n请输入你要转换的链接地址如果有多条链接，请用 | 分隔：")
@@ -171,87 +175,89 @@ url = urllib.parse.quote(url)
 
 print(
     "\n====================================================\n\n请选择想要使用的转换模式：\n---------------------------------------------\n\n基础模式:\n  1. 默认后端、不启用emoji、无额外配置规则 \n\n进阶模式:（可选后端、启用emoji、选择配置规则、选择节点等）\n  2. 默认进阶（+emoji、后端、配置） \n  3. 更多进阶模式（+节点选择/排除、自定义文件名） \n  4. 完全自定义（自定义全部选项）")
-choose = input("\n---------------------------------------------\n请选择想要的转换模式:")
-if choose == "1":
-    print("\n====================================================\n\n*使用基础模式*")
-    backend = "https://api.wcc.best/sub?"
-    insert = "false"
-    basic = backend + 'target=' + target + "&url=" + url + "&insert=" + insert
-    # encode = urllib.parse.quote(basic)
-    print("\n====================================================\n\n已生成转换链接，复制至客户端下载配置即可使用:\n")
-    print(basic)
+while len(choose) == 0 or int(choose) > 5 or int(choose) < 0:
+    choose = input("请输入正确的数字（1-4）：")
+    if len(choose) != 0 or 0 < int(choose) < 5:
+        if choose == "1":
+            print("\n====================================================\n\n*使用基础模式*")
+            backend = "https://api.wcc.best/sub?"
+            insert = "false"
+            basic = backend + 'target=' + target + "&url=" + url + "&insert=" + insert
+            # encode = urllib.parse.quote(basic)
+            print("\n====================================================\n\n已生成转换链接，复制至客户端下载配置即可使用:\n")
+            print(basic)
 
-if choose == "2":
-    print("\n====================================================\n\n*使用进阶模式1*")
-    high_mod()
+        if choose == "2":
+            print("\n====================================================\n\n*使用进阶模式1*")
+            high_mod()
 
-    print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
-    print(result)
-    
-if choose == "3":
-    print("\n*使用进阶模式2*")
-    high_mod()
-    high_mod2()
+            print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
+            print(result)
 
-    print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
-    print(result)
+        if choose == "3":
+            print("\n*使用进阶模式2*")
+            high_mod()
+            high_mod2()
 
-if choose == "4":
-    print("\n*使用进阶模式3·全部选项自定义*")
-    high_mod()
-    high_mod2()
+            print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
+            print(result)
 
-    node_list_use = input("\n====================================================\n是否输出为Node Lise（回车默认不启用）（y/n）：\n")
-    if node_list_use == "y":
-        node_list = "true"
-        print("输出为Node Lise")
-        result += "&list=" + node_list
-    else:
-        print("不输出为Node Lise")
-    fdn_use = input("\n====================================================\n是否过滤非法节点（回车默认不过滤）（y/n）：\n")
-    if fdn_use == "y":
-        fdn = "true"
-        print("过滤非法节点")
-        result += "&fdn=" + fdn
-    else:
-        print("不过滤非法节点")
-    udp_use = input("\n====================================================\n是否启用udp（回车默认不启用）（y/n）：\n")
-    if udp_use == "y":
-        udp = "true"
-        print("过滤启用udp")
-        result += "&udp=" + udp
-    else:
-        print("不过滤启用udp")
-    append_type_use = input("\n====================================================\n是否启用节点类型（回车默认不过滤）（y/n）：\n")
-    if append_type_use == "y":
-        append_type = "true"
-        print("启用节点类型")
-        result += "&append_typen=" + append_type
-    else:
-        print("不启用节点类型")
-    surge_doh_use = input("\n====================================================\n是否启用Surge.DoH（回车默认不过滤）（y/n）：\n")
-    if surge_doh_use == "y":
-        surge_doh = "true"
-        print("启用Surge.DoH")
-        result += "&surge_doh=" + surge_doh
-    else:
-        print("不启用Surge.DoH")
-    clash_doh_use = input("\n====================================================\n是否启用Clash.DoH（回车默认不过滤）（y/n）：\n")
-    if clash_doh_use == "y":
-        clash_doh = "true"
-        print("启用Clash.DoH")
-        result += "&clash_doh=" + clash_doh
-    else:
-        print("不启用Clash.DoH")
-    insert_use = input("\n====================================================\n是否启用网易云（回车默认不过滤）（y/n）：\n")
-    if insert_use == "y":
-        insert = "true"
-        print("启用网易云")
-        result += "&insert=" + insert
-    else:
-        print("不启用网易云")
+        if choose == "4":
+            print("\n*使用进阶模式3·全部选项自定义*")
+            high_mod()
+            high_mod2()
 
-    print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
-    print(result)
+            node_list_use = input("\n====================================================\n是否输出为Node Lise（回车默认不启用）（y/n）：\n")
+            if node_list_use == "y":
+                node_list = "true"
+                print("输出为Node Lise")
+                result += "&list=" + node_list
+            else:
+                print("不输出为Node Lise")
+            fdn_use = input("\n====================================================\n是否过滤非法节点（回车默认不过滤）（y/n）：\n")
+            if fdn_use == "y":
+                fdn = "true"
+                print("过滤非法节点")
+                result += "&fdn=" + fdn
+            else:
+                print("不过滤非法节点")
+            udp_use = input("\n====================================================\n是否启用udp（回车默认不启用）（y/n）：\n")
+            if udp_use == "y":
+                udp = "true"
+                print("过滤启用udp")
+                result += "&udp=" + udp
+            else:
+                print("不过滤启用udp")
+            append_type_use = input("\n====================================================\n是否启用节点类型（回车默认不过滤）（y/n）：\n")
+            if append_type_use == "y":
+                append_type = "true"
+                print("启用节点类型")
+                result += "&append_typen=" + append_type
+            else:
+                print("不启用节点类型")
+            surge_doh_use = input("\n====================================================\n是否启用Surge.DoH（回车默认不过滤）（y/n）：\n")
+            if surge_doh_use == "y":
+                surge_doh = "true"
+                print("启用Surge.DoH")
+                result += "&surge_doh=" + surge_doh
+            else:
+                print("不启用Surge.DoH")
+            clash_doh_use = input("\n====================================================\n是否启用Clash.DoH（回车默认不过滤）（y/n）：\n")
+            if clash_doh_use == "y":
+                clash_doh = "true"
+                print("启用Clash.DoH")
+                result += "&clash_doh=" + clash_doh
+            else:
+                print("不启用Clash.DoH")
+            insert_use = input("\n====================================================\n是否启用网易云（回车默认不过滤）（y/n）：\n")
+            if insert_use == "y":
+                insert = "true"
+                print("启用网易云")
+                result += "&insert=" + insert
+            else:
+                print("不启用网易云")
+
+            print("\n\n====================================================\n已生成转换链接，复制至客户端下载配置即可使用:\n")
+            print(result)
 
 input("\n\n复制完链接后，请按任意键退出：")
