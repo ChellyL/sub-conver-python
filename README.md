@@ -21,8 +21,8 @@
 用到的库：random、urllib3
 
 ```
-pip install random
-pip install urllib3
+pip3 install random
+pip3 install urllib3
 ```
 
 下载链接：
@@ -36,6 +36,7 @@ https://raw.githubusercontent.com/ChellyL/sub-conver-python/main/sub_con.py
 
 如需自建后端，也请参考tindy2013的subconverter程序：https://github.com/tindy2013/subconverter
 
+以下截图最后输出有bug，已经改了，稍微有点不同，可正常使用，懒得改图了
 使用截图：
 ![图片](https://user-images.githubusercontent.com/38887991/130318986-339f5ffa-c580-48a5-977b-06efe603cfc9.png)
 ![图片](https://user-images.githubusercontent.com/38887991/130318998-7728e205-2c2e-4474-87d6-7dd7ca22e0f1.png)
