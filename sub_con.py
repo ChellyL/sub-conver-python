@@ -59,6 +59,7 @@ def choose_config(choose_con):
 
 def high_mod():
     global result
+    global config
     print(
         "\n====================================================\n\n网友提供的后端链接(来源：https://acl4ssr.netlify.app/)：\n\n1. https://subcon.dlj.tf/sub?(subconverter作者提供)\n2. https://subconverter-web.now.sh/sub?(subconverter作者提供2)\n3. https://subconverter.herokuapp.com/sub?(subconverter作者提供3)\n4. https://sub.id9.cc/sub?（品云提供）\n5. https://api.dler.io/sub?（sub作者&lhie1提供）\n6. https://api.wcc.best/sub?（sub-web作者提供）\n7. https://api.tsutsu.cc/sub?（tsutsu提供）\n8. https://api.hope140.live/sub?（hope提供）\n9. https://api.v1.mk/sub?（肥羊提供）\n10. https://pub-api-1.bianyuan.xyz/sub?（边缘订阅提供）\n11. 自定义后端")
     choose_end = input("---------------------------------------------\n\n请输入你要选择的后端，回车则随机选择：")
@@ -134,38 +135,35 @@ print(
 print(
     "支持的客户端：\n1.clash\n2.surge3\n3.surge4\n4.quantumult\n5.quantumultX\n6.surfboard\n7.loon\n8.ssandriod\n9.v2ray\n10.ss\n11.ssr\n12.ssd\n13.clashr\n14.suger2")
 client = input("---------------------------------------------\n请输入你所使用的客户端:")
-while len(client) == 0 or 0 > int(client) or int(client) > 15:
-    client = input("请输入正确数字:")
-    if len(client) != 0 and 0 < int(client) < 15:
-        if client == "1":
-            target = "clash"
-        if client == "2":
-            target = "surge&ver3"
-        if client == "3":
-            target = "surge&ver4"
-        if client == "4":
-            target = "quan"
-        if client == "5":
-            target = "quanx"
-        if client == "6":
-            target = "surboard"
-        if client == "7":
-            target = "loon"
-        if client == "8":
-            target = "sssub"
-        if client == "9":
-            target = "v2ray"
-        if client == "10":
-            target = "ss"
-        if client == "11":
-            target = "ssr"
-        if client == "12":
-            target = "ssd"
-        if client == "13":
-            target = "clashr"
-        if client == "14":
-            target = "surge&ver2"
-        print("\n你选择了" + target + "客户端")
+if client == "1":
+    target = "clash"
+if client == "2":
+    target = "surge&ver3"
+if client == "3":
+    target = "surge&ver4"
+if client == "4":
+    target = "quan"
+if client == "5":
+    target = "quanx"
+if client == "6":
+    target = "surboard"
+if client == "7":
+    target = "loon"
+if client == "8":
+    target = "sssub"
+if client == "9":
+    target = "v2ray"
+if client == "10":
+    target = "ss"
+if client == "11":
+    target = "ssr"
+if client == "12":
+    target = "ssd"
+if client == "13":
+    target = "clashr"
+if client == "14":
+    target = "surge&ver2"
+print("\n你选择了" + target + "客户端")
 print("\n====================================================\n支持订阅或ss/ssr/trojan/vmess链接，多个链接请使用  |  分隔")
 
 url = input("\n请输入你要转换的链接地址如果有多条链接，请用 | 分隔：")
