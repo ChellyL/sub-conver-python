@@ -5,7 +5,7 @@ import urllib.parse
 def choose_backend(choose_end):
     global backend
     if choose_end == "":
-        choose_end = str(random.randint(1, 10))
+        choose_end = "1"
     # if choose_end == "1":
     #     backend = "https://subcon.dlj.tf/sub?"
     if choose_end == "1":
