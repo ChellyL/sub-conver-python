@@ -6,12 +6,14 @@ def choose_backend(choose_end):
     global backend
     if choose_end == "":
         choose_end = str(random.randint(1, 10))
+    # if choose_end == "1":
+    #     backend = "https://subcon.dlj.tf/sub?"
     if choose_end == "1":
-        backend = "https://subcon.dlj.tf/sub?"
+        backend = "https://pub-api-1.bianyuan.xyz/sub?"
     if choose_end == "2":
-        backend = "https://subconverter-web.now.sh/sub?"
+        backend = "https://sub.xeton.dev/sub?"
     if choose_end == "3":
-        backend = "https://subconverter.herokuapp.com/sub?"
+        backend = "https://sub.maoxiongnet.com/sub?"
     if choose_end == "4":
         backend = "https://sub.id9.cc/sub?"
     if choose_end == "5":
@@ -19,14 +21,12 @@ def choose_backend(choose_end):
     if choose_end == "6":
         backend = "https://api.wcc.best/sub?"
     if choose_end == "7":
-        backend = "https://api.tsutsu.cc/sub?"
+        backend = "https://api.tsutsu.one/sub?"
     if choose_end == "8":
-        backend = "https://api.hope140.live/sub?"
+        backend = "https://sub.d1.mk/sub?"
     if choose_end == "9":
         backend = "https://api.v1.mk/sub?"
     if choose_end == "10":
-        backend = "https://pub-api-1.bianyuan.xyz/sub?"
-    if choose_end == "11":
         backend = input("请输入自定义后端：")
     print("\n此次转换使用的后端为：" + backend)
 
@@ -61,7 +61,17 @@ def high_mod():
     global result
     global config
     print(
-        "\n====================================================\n\n网友提供的后端链接(来源：https://acl4ssr.netlify.app/)：\n\n1. https://subcon.dlj.tf/sub?(subconverter作者提供)\n2. https://subconverter-web.now.sh/sub?(subconverter作者提供2)\n3. https://subconverter.herokuapp.com/sub?(subconverter作者提供3)\n4. https://sub.id9.cc/sub?（品云提供）\n5. https://api.dler.io/sub?（sub作者&lhie1提供）\n6. https://api.wcc.best/sub?（sub-web作者提供）\n7. https://api.tsutsu.cc/sub?（tsutsu提供）\n8. https://api.hope140.live/sub?（hope提供）\n9. https://api.v1.mk/sub?（肥羊提供）\n10. https://pub-api-1.bianyuan.xyz/sub?（边缘订阅提供）\n11. 自定义后端")
+        "\n====================================================\n\n网友提供的后端链接：\n\n"
+        "1. https://pub-api-1.bianyuan.xyz/sub?（边缘订阅）\n"
+        "2. https://sub.xeton.dev/sub?(subconverter作者)\n"
+        "3. https://sub.maoxiongnet.com/sub?(猫熊)\n"
+        "4. https://sub.id9.cc/sub?（品云）\n"
+        "5. https://api.dler.io/sub?（sub作者&DlerCloud）\n"
+        "6. https://api.wcc.best/sub?（sub-web作者）\n"
+        "7. https://api.tsutsu.one/sub?（tsutsu）\n"
+        "8. https://sub.d1.mk/sub?（肥羊1 支持hysteria+vless）\n"
+        "9. https://api.v1.mk/sub?（肥羊2 支持hysteria+vless）\n"
+        "10. 自定义后端")
     choose_end = input("---------------------------------------------\n\n请输入你要选择的后端，回车则随机选择：")
     choose_backend(choose_end)
 
@@ -77,7 +87,8 @@ def high_mod():
     else:
         emoji = "true"
         print("启用emoji")
-    new_name_use = input("\n====================================================\n是否使用clash新字段名（回车默认启用）（y/n）：\n")
+    new_name_use = input(
+        "\n====================================================\n是否使用clash新字段名（回车默认启用）（y/n）：\n")
     if new_name_use == "n":
         new_name = "false"
         print("不启用clash新字段名")
@@ -91,14 +102,12 @@ def high_mod():
     else:
         sort = "true"
         print("使用节点排序")
-     
+
     tfo = "false"
     scv = "false"
     fdn = "false"
-    result = backend + 'target=' + target + "&url=" + url + "&config=" + config + "&emoji=" + emoji + \
-             "&tfo=" + tfo + "&scv=" + scv + "&fdn=" + fdn + "&sort=" + sort + "&new_name=" + new_name        
-        
-        
+    result = backend + 'target=' + target + "&url=" + url + "&config=" + config + "&emoji=" + emoji + "&tfo=" + tfo + "&scv=" + scv + "&fdn=" + fdn + "&sort=" + sort + "&new_name=" + new_name
+
 
 def high_mod2():
     global result
@@ -128,6 +137,7 @@ def high_mod2():
         result += "&filename=" + filename
         filename = urllib.parse.quote(filename)
         print("使用自定义订阅文件名：" + filename)
+
 
 print(
     "###################################################\n\n      Subscription Converter Python离线版\n\n###################################################")
@@ -164,7 +174,8 @@ if client == "13":
 if client == "14":
     target = "surge&ver2"
 print("\n你选择了" + target + "客户端")
-print("\n====================================================\n支持订阅或ss/ssr/trojan/vmess链接，多个链接请使用  |  分隔")
+print(
+    "\n====================================================\n支持订阅或ss/ssr/trojan/vmess链接，多个链接请使用  |  分隔")
 
 url = input("\n请输入你要转换的链接地址如果有多条链接，请用 | 分隔：")
 print("\n本次转换的链接为：" + url)
@@ -202,7 +213,8 @@ if choose == "4":
     high_mod()
     high_mod2()
 
-    node_list_use = input("\n====================================================\n是否输出为Node Lise（回车默认不启用）（y/n）：\n")
+    node_list_use = input(
+        "\n====================================================\n是否输出为Node Lise（回车默认不启用）（y/n）：\n")
     if node_list_use == "y":
         node_list = "true"
         print("输出为Node Lise")
@@ -223,21 +235,24 @@ if choose == "4":
         result += "&udp=" + udp
     else:
         print("不过滤启用udp")
-    append_type_use = input("\n====================================================\n是否启用节点类型（回车默认不过滤）（y/n）：\n")
+    append_type_use = input(
+        "\n====================================================\n是否启用节点类型（回车默认不过滤）（y/n）：\n")
     if append_type_use == "y":
         append_type = "true"
         print("启用节点类型")
         result += "&append_typen=" + append_type
     else:
         print("不启用节点类型")
-    surge_doh_use = input("\n====================================================\n是否启用Surge.DoH（回车默认不过滤）（y/n）：\n")
+    surge_doh_use = input(
+        "\n====================================================\n是否启用Surge.DoH（回车默认不过滤）（y/n）：\n")
     if surge_doh_use == "y":
         surge_doh = "true"
         print("启用Surge.DoH")
         result += "&surge_doh=" + surge_doh
     else:
         print("不启用Surge.DoH")
-    clash_doh_use = input("\n====================================================\n是否启用Clash.DoH（回车默认不过滤）（y/n）：\n")
+    clash_doh_use = input(
+        "\n====================================================\n是否启用Clash.DoH（回车默认不过滤）（y/n）：\n")
     if clash_doh_use == "y":
         clash_doh = "true"
         print("启用Clash.DoH")
